@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Index{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>请选择你喜欢的演员，并点击Submit！</h1>
+</div>
+{{wtf.quick_form(form)}}
+<h1>当前选择的演员是：{{ name }}</h1>
+{% for video in videos_results %}
+<div id="video_title">
+    <h3 class="post-title text">{{ video.number }} {{ video.title }}</h3>
+</div>
+<table id="video_jacket_info">
+    <tbody>
+    <tr>
+        <td style="vertical-align: top;">
+            <div id="video_jacket">
+                <img width="300px" src="/static/jpg/{{ video.number }}.jpg"/>
+            </div>
+        </td>
+        <td style="vertical-align: top;">
+            <div id="video_info">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>番号</td><td>{{ video.number }}</td>
+                    </tr>
+                    <tr>
+                        <td>发售时间</td><td>{{ video.date }}</td>
+                    </tr>
+                    <tr>
+                        <td>时长</td><td>{{ video.length }}</td>
+                    </tr>
+                    <tr>
+                        <td>编码</td><td>{{ video.codec_tag }}</td>
+                    </tr>
+                    <tr>
+                        <td>高度</td><td>{{ video.height }}</td>
+                    </tr>
+                    <tr>
+                        <td>宽度</td><td>{{ video.width }}</td>
+                    </tr>
+                    <tr>
+                        <td>码率</td><td>{{ video.bit_rate }}</td>
+                    </tr>
+                    <tr>
+                        <td>大小</td><td>{{ video.size }}</td>
+                    </tr>
+                     </tbody>
+                </table>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+{% endfor %}
+{% endblock %}
