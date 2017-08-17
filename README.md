@@ -16,3 +16,6 @@
 2. 分别替代AV_process\main_wuma与AV_process\main_youma中video_dir的路径，上网下载AV的信息并存入数据库（**注意：目录中不能有空格**）
 3. 拷贝AV.db至flask文件夹，将有码无码文件夹中的图片拷贝至flask\static\jpg
 4. 运行START.bat
+5. 最终结果如下：
+
+![](https://pic2.zhimg.com/v2-84d4ee54927de5f1acd99631670a7d4d_b.png)
